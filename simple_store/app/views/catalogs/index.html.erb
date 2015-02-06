@@ -1,0 +1,29 @@
+<% if notice %>
+  <div class="alert">
+    <p id="notice"><%= notice %></p>
+  </div>
+<% end -%>
+
+<h1>Listing Catalogs</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @catalogs.each do |catalog| %>
+      <tr>
+        <td><%= link_to "#{catalog.name}", catalog %></td>
+        <td><%= link_to 'Edit', edit_catalog_path(catalog) %></td>
+        <td><%= link_to 'Destroy', catalog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Catalog', new_catalog_path %>

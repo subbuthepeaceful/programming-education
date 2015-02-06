@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-10">
+    <%= form_for(@catalog, url: catalogs_path, html: { :class => "form-horizontal"}) do |f| %>
+      <% if @catalog.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@catalog.errors.count, "error") %> prohibited this catalog from being saved:</h2>
+
+          <ul>
+          <% @catalog.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.label "Name", class: "col-sm-2 control-label" %>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2">
+          <%= f.label "Active" %>
+          <%= f.radio_button :active, true, :checked => true, :value => true %>
+          <%= f.label "Inactive" %>
+          <%= f.radio_button :active, false, :value => false %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2">
+          <%= f.submit "Add", :class => "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
