@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-10">
-    <%= form_for(@catalog, url: catalogs_path, html: { :class => "form-horizontal"}) do |f| %>
+    <%= form_for(@catalog, html: { :class => "form-horizontal"}) do |f| %>
       <% if @catalog.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@catalog.errors.count, "error") %> prohibited this catalog from being saved:</h2>
