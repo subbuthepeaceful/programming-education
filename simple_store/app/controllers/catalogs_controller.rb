@@ -1,4 +1,5 @@
 class CatalogsController < ApplicationController
+  before_action :do_we_have_a_logged_in_admin_user?
   before_action :set_catalog, only: [:show, :edit, :update, :destroy]
 
   # GET /catalogs
@@ -70,5 +71,12 @@ class CatalogsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def catalog_params
       params[:catalog].permit(:name, :active)
+    end
+
+    def do_we_have_a_logged_in_admin_user?
+      unless current_user and current_user.admin
+        flash[:notice] = "You need to be logged in as an administrator to access this feature"
+        redirect_to root_path 
+      end
     end
 end
