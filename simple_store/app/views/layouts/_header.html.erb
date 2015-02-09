@@ -1,5 +1,11 @@
 <nav class="navbar navbar-default">
-  <div class="navbar-header">
+  <div class="container">
     <a class="navbar-brand" href="/">Simple Store</a>
+    <% if user_signed_in? -%>
+      <p class="navbar-text navbar-right"><%= logged_in_welcome_message %>
+        |
+        <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+      </p>
+    <% end -%>
   </div>
 </nav>
