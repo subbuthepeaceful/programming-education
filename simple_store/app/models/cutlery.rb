@@ -1,0 +1,2 @@
+class Cutlery < Product
+end
