@@ -6,10 +6,10 @@
       <p><%= flash[:notice] %></p>
     </div>
   <% end -%>
-    <p>We are under construction.</p> 
+    <p>We are somewhat under construction.</p> 
     <br />
     <% if user_signed_in? %>
-      <p>Welcome to the Best Simple Store. Thank you for signing up</p>
+      <%= render partial: "products/types_in_a_row" %>
     <% else -%>
       <p>While we work on building our catalog, please <%= link_to "sign up", new_user_registration_path %></p>
       <br />

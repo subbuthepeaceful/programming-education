@@ -58,4 +58,5 @@ stainless_steel_forks = Product.create(name: "Stainless Steel Forks",
                                        description: "A Dinner utensil fit for a Royal family",
                                        price: 29.99,
                                        finish: "Polished Steel",
-                                       unit_quantity: 8)                       
+                                       unit_quantity: 8,
+                                       catalog: master_catalog)                       
