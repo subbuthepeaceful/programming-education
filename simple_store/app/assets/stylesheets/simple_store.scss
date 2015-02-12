@@ -1,0 +1,22 @@
+@import url(http://fonts.googleapis.com/css?family=Ek+Mukta);
+
+$general-body-font: "Ek Mukta", serif;
+$product-title-color: #FF7788;
+
+
+body {
+  font-family: $general-body-font;
+}
+
+div.product-list {
+  min-height: 300px;
+  margin: 2%;
+  border: 0.5px $product-title-color dashed;
+  h3 {
+    color: $product-title-color;
+  }
+  ul {
+    list-style: circle;
+  }
+}
+
