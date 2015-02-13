@@ -1,0 +1,6 @@
+Type,Name,Description,Gender,Size,Color,Fabric,Capacity,Shell,Finish,Unit_quantity,Categories
+Apparel,Simple T-Shirt,This is an extremely Simple T-Shirt,Both,"S,M,L,XL",White,Cotton,,,,,"Casuals, Summer"
+Apparel,Fancy T-Shirt,This is an slightly Fancy  T-Shirt,Both,"S,M,L,XL",Black,Dri-Fit,,,,,"Casuals, Summer, Fitness"
+Apparel,Simple Pants,These are very beautiful Simple Pants,Men,"W29-W40,H30-34","Dark Blue, Black, Beige",Wrinkle-free,,,,,Casuals
+Apparel,Fancy Pants,These Pants are quite Fancy,Women,"2,4,6,8,10,12,14","Black,Silver",Glossy Leather,,,,,"Evenings,Occasions"
+Apparel,Matrix Overcoat,"Be like Neo, enjoy the Matrix",Both,One Size,Black,Glossy Leather,,,,,Occasions

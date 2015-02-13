@@ -25,6 +25,7 @@ office_accessories = Category.create(name: "Office Accessories",
                                      catalog: master_catalog,
                                      parent: nil)
 
+
 Product.delete_all
 # Create a new Product of Type Apparel
 fancy_down_jacket = Product.create(name: "Fancy Down Jacket",
