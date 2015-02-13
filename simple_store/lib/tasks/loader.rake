@@ -16,7 +16,7 @@ namespace :simple_store do
 
       total_number_of_elements = csv_catalog.size - 1 # taking out the header line
 
-      csv_catalog[1..total_number_of_elements-1].each do |csv_catalog_line|
+      csv_catalog[1..total_number_of_elements].each do |csv_catalog_line|
 
         product = Product.create(type: csv_catalog_line[0],
                                 name: csv_catalog_line[1],
@@ -35,6 +35,7 @@ namespace :simple_store do
         product_categories = csv_catalog_line[11]
         product_categories.split(",").each do |category_in_csv|
           begin 
+            puts "Looking for Category #{category_in_csv}"
             category = Category.find_by_name!(category_in_csv)
           rescue ActiveRecord::RecordNotFound
             # This category doesn't exist
