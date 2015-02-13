@@ -16,6 +16,7 @@ class CatalogsController < ApplicationController
   # GET /catalogs/new
   def new
     @catalog = Catalog.new
+    @catalog.images.build
   end
 
   # GET /catalogs/1/edit
@@ -25,10 +26,18 @@ class CatalogsController < ApplicationController
   # POST /catalogs
   # POST /catalogs.json
   def create
-    @catalog = Catalog.new(catalog_params)
+    @catalog = Catalog.new(catalog_params.permit(:name, :active))
 
     respond_to do |format|
       if @catalog.save
+
+        # Now Lets save some images
+        if params["catalog"]["images"]
+          params["catalog"]["images"]["image"].each do |image|
+            Image.create(imageable_id: @catalog.id, imageable_type: "Catalog", image: image)
+          end
+        end
+
         format.html { redirect_to catalogs_path, notice: 'Catalog was successfully created.' }
         format.json { render :show, status: :created, location: @catalog }
       else
@@ -70,7 +79,7 @@ class CatalogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def catalog_params
-      params[:catalog].permit(:name, :active)
+      params[:catalog].permit(:name, :active, images: [:image]) 
     end
 
     def do_we_have_a_logged_in_admin_user?

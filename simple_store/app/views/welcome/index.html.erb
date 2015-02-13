@@ -6,7 +6,7 @@
       <p><%= flash[:notice] %></p>
     </div>
   <% end -%>
-    <p>We are somewhat under construction.</p> 
+    <%= image_tag @catalog.images.first.image_url %> 
     <br />
     <% if user_signed_in? %>
       <%= render partial: "products/types_in_a_row" %>
