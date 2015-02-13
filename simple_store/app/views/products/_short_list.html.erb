@@ -1,8 +1,13 @@
-<div class="col-md-3 product-list">
+<div class="col-md-3 product-list <%=type.downcase %>">
   <h3><%= type %></h3>
   <ul>
-  <% type.constantize.all.each do |product| -%>
-    <li><%= product.name %></li>
+  <% type.constantize.all.each_with_index do |product, i| -%>
+    <% if product.is_a?(Apparel) and i == 0 -%>
+      <li><%= link_to product.name, "#", id: "featured-apparel-product", data_product_id: product.id %></li>
+    <% else -%>
+      <li><%= product.name %></li>
+    <% end -%>
   <% end -%>
   </ul>
 </div>
+
