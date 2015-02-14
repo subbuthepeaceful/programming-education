@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @catalog = Catalog.first
+    @catalog = Catalog.last
   end
 end
