@@ -50,5 +50,8 @@ group :development, :test do
 
   # RSpec Rails
   gem 'rspec-rails'
+
+  # Letter Opener for testing email
+  gem 'letter_opener'
 end
 
