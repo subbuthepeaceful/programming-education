@@ -29,7 +29,7 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       if @project.save
 
-        ProjectMailer.project_created(current_user, @project).deliver_now
+        ProjectMailer.project_created(current_user, @project).deliver_later
 
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }
