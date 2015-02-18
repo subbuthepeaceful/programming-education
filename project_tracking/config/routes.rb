@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  resources :projects
+  resources :topics
+
+  resources :projects do
+    member do 
+      get 'list_topics'
+      post 'assign_topics'
+    end
+  end
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
@@ -10,6 +17,12 @@ Rails.application.routes.draw do
 
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
+
+  # Named route for people
+  get '/people' => 'people#index'
+  get '/me' => 'people#me'
+
+  post '/me/update_topics' => 'people#update_topics'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

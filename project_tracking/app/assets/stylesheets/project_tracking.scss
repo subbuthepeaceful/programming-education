@@ -5,3 +5,10 @@ $default-font-family: 'Lato', sans-serif;
 body {
   font-family: $default-font-family;
 }
+
+div#topic-assign-buttons {
+  padding-top: 50px;
+  button {
+    margin: 10px;
+  }
+}

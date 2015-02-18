@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Topic.create([
+  { title: 'Ruby on Rails'},
+  { title: 'HTML5/CSS3'},
+  { title: 'Javascript'},
+  { title: 'System Administration'},
+  { title: 'Amazon Web Services'},
+  { title: 'BackboneJS'},
+  { title: 'RSpec/Cucumber'},
+  { title: 'Data Modeling'}
+])
