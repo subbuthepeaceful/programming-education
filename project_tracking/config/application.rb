@@ -25,5 +25,8 @@ module ProjectTracking
 
     # Use sidekiq as the ActiveJob Queue Adapter
     config.active_job.queue_adapter = :sidekiq
+
+    # Add additional utilities directory
+    config.autoload_paths += %W(#{config.root}/app/utilities)
   end
 end

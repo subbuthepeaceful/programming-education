@@ -1,3 +1,5 @@
+require 'topical'
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -6,6 +8,8 @@ class User < ActiveRecord::Base
          :confirmable
 
   has_and_belongs_to_many :topics
+
+  include Utilities::Topical
 
   def full_name
     "#{first_name} #{last_name}"
