@@ -11,5 +11,9 @@ module Utilities
     def pretty_print_topics
       topics.map { |t| t.title }.join(", ")
     end
+
+    def Topical.who_am_i
+      self
+    end
   end
 end

@@ -2,6 +2,15 @@
 
 <h1>Listing Projects</h1>
 
+<hr />
+<h2>Fun Projects</h2>
+<ul>
+  <% Project.find_fun_projects.each do |fun_project| -%>
+  <li><%= fun_project.title %></li>
+  <% end -%>
+</ul>
+<hr />
+
 <table class="table">
   <thead>
     <tr>
