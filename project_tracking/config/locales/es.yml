@@ -1,2 +1,15 @@
-es:
-  hello: "Hello world"
+es: 
+  listing_projects: "Lista de Proyectos"
+  fun_projects: "Projects Divertidos"
+  title: "Título"
+  description: "Descripción"
+  start_date: "Fecha de inicio"
+  show: "Enseñar"
+  edit: "Editar"
+  topics: "Temas"
+  destroy: "Destruir"
+  areyousure: "Estás seguro?"
+  new_project: "Nuevo Proyecto"
+  date:
+    formats:
+      default: "%d/%m/%Y"

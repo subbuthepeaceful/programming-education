@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Projects</h1>
+<!-- <h1>Listing Projects</h1> -->
+<h1><%= I18n.t :listing_projects %></h1>
 
 <hr />
-<h2>Fun Projects</h2>
+<h2><%= I18n.t :fun_projects %></h2>
 <ul>
   <% Project.find_fun_projects.each do |fun_project| -%>
   <li><%= fun_project.title %></li>
@@ -14,9 +15,9 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Start date</th>
+      <th><%= I18n.t :title %></th>
+      <th><%= I18n.t :description %></th>
+      <th><%= I18n.t :start_date %></th>
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -26,11 +27,11 @@
       <tr>
         <td><%= project.title %></td>
         <td><%= project.description %></td>
-        <td><%= project.start_date %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Topics', list_topics_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= I18n.l project.start_date %></td>
+        <td><%= link_to "#{I18n.t :show}", project %></td>
+        <td><%= link_to "#{I18n.t :edit}", edit_project_path(project) %></td>
+        <td><%= link_to "#{I18n.t :topics}", list_topics_project_path(project) %></td>
+        <td><%= link_to "#{I18n.t :destroy}", project, method: :delete, data: { confirm: "#{I18n.t :areyousure}" } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +39,4 @@
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+<%= link_to "#{I18n.t :new_project}", new_project_path %>

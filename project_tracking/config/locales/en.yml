@@ -20,4 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  listing_projects: "Project List"
+  fun_projects: "Fun Projects"
+  title: "Title"
+  description: "Description"
+  start_date: "Start Date"
+  show: "Show"
+  edit: "Edit"
+  topics: "Topics"
+  destroy: "Destroy"
+  areyousure: "Are you sure?"
+  new_project: "New Project"
