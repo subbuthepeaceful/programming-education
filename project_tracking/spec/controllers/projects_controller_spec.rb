@@ -24,11 +24,21 @@ RSpec.describe ProjectsController, type: :controller do
   # Project. As you add validations to Project, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    # skip("Add a hash of attributes valid for your model")
+    {
+      title: "Test Ruby on Rails Project",
+      description: "This is a test project for Ruby on Rails",
+      start_date: Time.now.advance(:years => -1).to_date
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+  #   skip("Add a hash of attributes invalid for your model")
+    {
+      title: "Test Invalid Ruby on Rails Project",
+      description: "This is an invalid test project for Ruby on Rails",
+      start_date: nil
+    }
   }
 
   # This should return the minimal set of values that should be in the session

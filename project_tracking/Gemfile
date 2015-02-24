@@ -55,6 +55,9 @@ group :development, :test do
 
   # RSpec Rails
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'database_cleaner'
 
   # Letter Opener for testing email
   gem 'letter_opener'
