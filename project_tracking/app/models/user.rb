@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
 
   has_and_belongs_to_many :topics
 
+  validates :password, 
+            format: { with: /\A(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).+\z/,
+                      message: "needs at least one upper case, one lower case and one number" }
+
   include Utilities::Topical
 
   def full_name
