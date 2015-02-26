@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :project do
     title "Ruby on Rails Project"
-    description "This is a long project involving RoR"
+    description "This is a long project involving RoR. Sometimes these projects are Crazy"
     start_date "2014-02-24"
   end
   trait :java_project do

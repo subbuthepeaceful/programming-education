@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   resources :topics
 
   resources :projects do
+    collection do 
+      get 'search' # TO SHOW THE FORM
+      post 'results' # TO PROCESS THE SEARCH
+    end
     member do 
       get 'list_topics'
       post 'assign_topics'

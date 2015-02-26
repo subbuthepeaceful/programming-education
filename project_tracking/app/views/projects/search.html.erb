@@ -1,0 +1,6 @@
+<h1><%= I18n.t :search_projects %></h1>
+
+<%= form_tag('/projects/results') do -%>
+  <%= text_field_tag :keyword, '', size: 40, placeholder: "#{I18n.t :search_prompt}" %>
+  <%= submit_tag "#{I18n.t :search}", class: "btn btn-primary" %>
+<% end -%>

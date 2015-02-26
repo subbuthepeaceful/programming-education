@@ -69,6 +69,13 @@ class ProjectsController < ApplicationController
   def list_topics
   end
 
+  def search
+  end
+
+  def results
+    @projects = Project.search(params[:keyword], :title, :description)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project

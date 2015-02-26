@@ -31,3 +31,6 @@ en:
   destroy: "Destroy"
   areyousure: "Are you sure?"
   new_project: "New Project"
+  search: "Search"
+  search_projects: "Search Projects"
+  search_prompt: "Enter keywords to search for projects"

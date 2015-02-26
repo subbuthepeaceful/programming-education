@@ -20,4 +20,15 @@ class Project < ActiveRecord::Base
 
     fun_projects
   end
+
+  def self.search(keywords, *attributes)
+    project_list = []
+    attributes.each do |attribute|
+      matching_projects = Project.where("#{attribute.to_s} REGEXP '#{keywords}'")
+      matching_projects.each do |project|
+        project_list << project
+      end
+    end
+    project_list
+  end
 end
