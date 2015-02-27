@@ -29,6 +29,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use devise for User Management
 gem 'devise'
 
+# Use "Omniauth Facebook for Facebook signup"
+gem 'omniauth-facebook'
+
 # Use sidekiq for Background Processing
 gem 'sidekiq'
 

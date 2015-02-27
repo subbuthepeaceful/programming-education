@@ -31,7 +31,7 @@ class ProjectsController < ApplicationController
 
         ProjectMailer.project_created(current_user, @project).deliver_now
 
-        ProjectWorker.perform_project_match_async(@project)
+        # ProjectWorker.perform_project_match_async(@project)
 
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
         format.json { render :show, status: :created, location: @project }

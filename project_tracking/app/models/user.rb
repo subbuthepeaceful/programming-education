@@ -5,13 +5,14 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :confirmable
+         :omniauthable, :omniauth_providers => [:facebook]
+         # :confirmable
 
   has_and_belongs_to_many :topics
 
-  validates :password, 
-            format: { with: /\A(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).+\z/,
-                      message: "needs at least one upper case, one lower case and one number" }
+  # validates :password, 
+  #           format: { with: /\A(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).+\z/,
+  #                     message: "needs at least one upper case, one lower case and one number" }
 
   include Utilities::Topical
 
