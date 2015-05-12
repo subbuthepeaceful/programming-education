@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# Catalog.delete_all
-master_catalog = Catalog.first
+Catalog.delete_all
+master_catalog = Catalog.create(name: "Master Catalog", active: true)
 
 Category.delete_all
 winter_clothing_category = Category.create(name: "Winter Clothing",

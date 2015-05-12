@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $("a#featured-apparel-product").click(function() {
     var productId = $(this).attr("data_product_id");
-    var productUrl = "/products/" + productId + ".json";
+    var productUrl = "api/v1/products/" + productId + ".json";
     $.get(productUrl, function(response) {
       $("div.luggage").hide();
       $("div.cutlery").hide();

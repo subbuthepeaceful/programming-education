@@ -1,7 +1,7 @@
 <div class="col-md-3 product-list <%=type.downcase %>">
   <h3><%= type %></h3>
   <%#= image_tag @catalog.images.first.image_url(:short_wide) %>
-  <%= image_tag @catalog.images[index].image_url(:short_wide) %>
+  <%#= image_tag @catalog.images[index].image_url(:short_wide) %>
   <ul>
   <% type.constantize.all.each_with_index do |product, i| -%>
     <% if product.is_a?(Apparel) and i == 0 -%>
